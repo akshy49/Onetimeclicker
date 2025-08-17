@@ -11,16 +11,16 @@ import { Routes, Route } from "react-router-dom";
 function App() {
     return(
         <>
+        
         <Header/>
-    
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/About" element={<About/>}/>
+            {/* <Route path="/About" element={<About/>}/>  */}
             <Route path="/Galleries" element={<Galleries/>}/>
             <Route path="/Works" element={<Works/>}/>
             <Route path="/Contact" element={<Contact/>}/>
         </Routes>
-        
+        <About/>
         </>
     );
   

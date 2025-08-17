@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX, FiInstagram, FiFacebook, FiLinkedin,} from "react-icons/fi"
+import { FiMenu, FiX, FiInstagram, FiFacebook,} from "react-icons/fi"
+import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import {Link } from 'react-router-dom';
 
@@ -73,8 +74,8 @@ const closeBookingForm = () => setBookingFormOpen(false);
                  animate={{ y: 0, opacity: 1 }}
                  transition={{
                  type: "spring",
-                 stiffness: 100,
-                 damping: 20,
+                 stiffness: 150,
+                 damping: 25,
                  delay: 0.9 + index * 0.2,
               }}
 
@@ -110,7 +111,7 @@ const closeBookingForm = () => setBookingFormOpen(false);
             duration: 0.8,
             delay: 1.6,  
         }}
-            className="flex items-center mt-4 mr-10 text-sm md:text-xl 
+            className="hidden md:flex items-center mt-4 mr-10 text-sm md:text-xl 
              px-2 md:px-3 py-1 md:py-2 rounded-lg md:rounded-xl font-bold 
              bg-gradient-to-r from-gray-700 to-gray-800
              hover:from-gray-700 hover:to-gray-500 hover:text-black">
@@ -156,7 +157,9 @@ const closeBookingForm = () => setBookingFormOpen(false);
         )
         )} 
 
-        <div className="border-t">
+        
+        <div className="border-t mr-4">
+          <div className="mb-5">
         <div className="flex space-x-5 pt-5">
             <a className="hover:text-gray-800"
             href="">
@@ -170,11 +173,20 @@ const closeBookingForm = () => setBookingFormOpen(false);
 
             <a className="hover:text-gray-800"
             href="">
-                <FiLinkedin className="h-6 w-6 "/>
+                <FaXTwitter className="h-6 w-6 "/>
            </a>
         </div>
-
       </div>
+
+        <div>
+          <button onClick={openBookingForm} 
+          className="rounded-lg w-full py-1 text-2xl md:rounded-xl font-bold 
+             bg-gradient-to-r from-gray-700 to-gray-800
+             hover:from-gray-700 hover:to-gray-500 hover:text-black">
+            Booking
+          </button>
+        </div>
+        </div>
       </nav>   
     </motion.div> 
      
@@ -186,7 +198,7 @@ const closeBookingForm = () => setBookingFormOpen(false);
           animate={{opacity:1}}
           exit={{opacity:0}}
           transition={{duration:0.5}}
-          className="fixed inset-0 z-50
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm
           flex items-center justify-center p-4">
 
           <motion.div 
